@@ -90,7 +90,7 @@ public class Main {
     // Get currency and country for location
     RetrieveLocationResponse locationResponse = getLocationInformation(squareClient).get();
     model.put("paymentFormUrl",
-        squareEnvironment.equals("sandbox") ? "https://sandbox.web.squarecdn.com/v1/square.js"
+        "sandbox".equals(squareEnvironment) ? "https://sandbox.web.squarecdn.com/v1/square.js"
             : "https://web.squarecdn.com/v1/square.js");
     model.put("locationId", squareLocationId);
     model.put("appId", squareAppId);

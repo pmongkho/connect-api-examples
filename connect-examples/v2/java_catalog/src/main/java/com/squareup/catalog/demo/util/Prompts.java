@@ -51,9 +51,9 @@ public class Prompts {
    */
   public static boolean promptUserInputYesNo(String message, Logger logger) {
     String response = promptUserInput(message).trim();
-    if (response.equalsIgnoreCase("y") || response.equalsIgnoreCase("yes")) {
+    if ("y".equalsIgnoreCase(response) || "yes".equalsIgnoreCase(response)) {
       return true;
-    } else if (response.equalsIgnoreCase("n") || response.equalsIgnoreCase("no")) {
+    } else if ("n".equalsIgnoreCase(response) || "no".equalsIgnoreCase(response)) {
       return false;
     }
 

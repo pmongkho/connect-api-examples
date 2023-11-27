@@ -169,7 +169,7 @@ public class ApplyTaxToAllIItemsExample extends Example {
           for (CatalogObject item : items) {
             // Ignore non-regular items and items already linked to the tax.
             String itemType = item.getItemData().getProductType();
-            if ((itemType == null || itemType.equals("REGULAR"))
+            if ((itemType == null || "REGULAR".equals(itemType))
                 && (item.getItemData().getTaxIds() == null || !item.getItemData()
                 .getTaxIds()
                 .contains(taxId))) {

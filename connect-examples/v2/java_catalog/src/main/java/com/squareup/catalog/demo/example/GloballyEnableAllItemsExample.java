@@ -74,7 +74,7 @@ public class GloballyEnableAllItemsExample extends Example {
           for (CatalogObject itemObject : items) {
             CatalogItem item = itemObject.getItemData();
             String productType = item.getProductType();
-            boolean isRegularItem = productType == null || productType.equals("REGULAR");
+            boolean isRegularItem = productType == null || "REGULAR".equals(productType);
             boolean isGloballyEnabled = itemObject.getPresentAtAllLocations()
                 && (itemObject.getPresentAtLocationIds() == null
                 || itemObject.getPresentAtLocationIds().isEmpty())
