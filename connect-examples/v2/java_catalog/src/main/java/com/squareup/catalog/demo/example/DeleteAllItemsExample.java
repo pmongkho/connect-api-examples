@@ -50,7 +50,7 @@ public class DeleteAllItemsExample extends Example {
 
     // Prompt the user to verify that they actually want to delete all items in the
     // library.
-    if (!promptUserInput(CONFIRMATION_PROMPT).equals("DELETE")) {
+    if (!"DELETE".equals(promptUserInput(CONFIRMATION_PROMPT))) {
       logger.info("Example aborted");
       return;
     }

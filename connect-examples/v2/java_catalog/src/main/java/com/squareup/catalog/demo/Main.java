@@ -183,8 +183,8 @@ public class Main {
 
     Builder apiClientBuilder = new SquareClient.Builder();
 
-    if (environment != null && !environment.equalsIgnoreCase("sandbox")
-        && !environment.equalsIgnoreCase("production")) {
+    if (environment != null && !"sandbox".equalsIgnoreCase(environment)
+        && !"production".equalsIgnoreCase(environment)) {
       // was set to something that we do not support.
       logger.error(
           "If you choose to use the -env flag, you must either specify \"sandbox\" or \"production\"");
@@ -204,7 +204,7 @@ public class Main {
         env = Environment.SANDBOX;
       }
     } else {
-      env = environment.equalsIgnoreCase("sandbox") ? Environment.SANDBOX : Environment.PRODUCTION;
+      env = "sandbox".equalsIgnoreCase(environment) ? Environment.SANDBOX : Environment.PRODUCTION;
     }
 
     // Build the client using the arguments provided
