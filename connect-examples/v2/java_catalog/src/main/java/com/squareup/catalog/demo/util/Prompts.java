@@ -16,6 +16,7 @@
 package com.squareup.catalog.demo.util;
 
 import com.squareup.catalog.demo.Logger;
+import io.github.pixee.security.BoundedLineReader;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -36,7 +37,7 @@ public class Prompts {
     System.out.flush();
     BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
     try {
-      return br.readLine();
+      return BoundedLineReader.readLine(br, 5_000_000);
     } catch (IOException e) {
       throw new RuntimeException(e);
     }
